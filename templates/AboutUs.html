@@ -1,0 +1,328 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Oracle Market insights</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="icon" href="https://uxwing.com/wp-content/themes/uxwing/download/hand-gestures/good-icon.png"
+        type="image/icon type">
+
+    <!-- Favicons -->
+    <!-- <link href="{% static 'img/favicon.png" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css"
+        integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent bg-white">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1><a href="index.html" class="text-dark"><span></span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <a href="index.html"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+
+                    <li class="dropdown "><a href="./Industrial.html" class="dropdown text-dark"><span>Industry
+                                Verticals</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            {% for c in cat %}
+                            <li><a href="/category/{{c.pk}}">{{c.name}}</a></li>
+                            {% endfor %}
+
+                        </ul>
+                    </li>
+                    <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
+
+                    </li>
+
+
+
+
+
+                    <li><a href="/contactus" class="nav-link scrollto text-dark" href="ContactUs.html">Contact</a></li>
+                    <li><a class="nav-link   text-dark" href="#hero"><i class="fa fa-shopping-bag"></i></a></li>
+
+                    <li><a class="nav-link  text-dark" href="#hero"><i class="fa fa-search"></i></a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- Main Section Start -->
+    <section class="about-us" id="about-us">
+        <div class="container">
+            <p class="mt-5">Oracle Market Insights is a global market intelligence research and consulting firm that
+                specializes in
+                providing in-depth, reliable data that businesses across industries can rely on. Headquartered in India,
+                and with our sales office is in Ohio, our specialized team of 100+ consultants, expert analysts and
+                freelancers across the globe use proprietary analytics methods to stay on top of global market shifts
+                and opportunities. These insights are offered as customized and syndicated market research reports,
+                along with personalized management consulting to our vast clientele across all business verticals.</p>
+            <p>
+                Our granular research and consulting practice involves gathering the latest insights across different
+                verticals and industries ranging from ICT, CMFE, Healthcare, FMCG, Automotive, and more. With reliable
+                forecasts and insights on market state, penetration strategies, growth opportunities and customer
+                behavior insight, we ensure that our clients have the right resources to stay on top of market trends
+                and be ahead of competition.
+            </p>
+        </div>
+        <div class="container-fluid p-5" style="background-color: #f6f6f6;">
+            <h2 class="text-center">What differentiates us</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
+                        <div class="member" style="background: linear-gradient(45deg, #EC0511FC, #1142D7FC); padding: 25px; ">
+                            <i class="fas fa-industry"
+                                style="color:#ffffff; font-size: 28px; display: flex; justify-content: center;"></i>
+
+                            <div class="member-img">
+                            </div>
+
+                            <div class="member-info">
+                                <h4 class="text-center text-white">Verified in-depth Data By Industry</h4>
+                                <p class="text-center text-white">We offer in-depth validated data & insights with
+                                    detailed industry segmentation at global regional market levels.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
+                        <div class="member" style="background: linear-gradient(45deg, #EC0511FC, #1142D7FC);padding: 25px;">
+                            <i class="fas fa-layer-group"
+                                style="color:#ffffff; font-size: 28px; display: flex; justify-content: center;"></i>
+                            <div class="member-img">
+                            </div>
+                            <div class="member-info">
+                                <h4 class="text-center text-white">Identify Growth Opportunities</h4>
+                                <p class="text-center text-white">Our expert team of 100+ analysts, consultants and
+                                    freelancers ensure our clients receive authentic and reliable data that helps
+                                    identify market drivers & opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
+                        <div class="member" style="background: linear-gradient(45deg, #EC0511FC, #1142D7FC); padding: 25px;">
+                            <i class="fab fa-accusoft"
+                                style="color:#ffffff; font-size: 28px; display: flex; justify-content: center;"></i>
+                            <div class="member-img">
+                            </div>
+                            <div class="member-info">
+                                <h4 class="text-center text-white">Anytime, Anywhere Customer Support</h4>
+                                <p class="text-center text-white">Our dedicated team of customer support representatives
+                                    & research team are accessible 24*7 to our clients across different geographies and
+                                    continents</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
+                        <div class="member" style="background: linear-gradient(45deg, #EC0511FC, #1142D7FC); padding: 25px;">
+                            <i class="fab fa-accessible-icon"
+                                style="color:#ffffff; font-size: 28px; display: flex; justify-content: center;"></i>
+                            <div class="member-img">
+                            </div>
+                            <div class="member-info">
+                                <h4 class="text-center text-white">Dedicated Account Managers & Consultants</h4>
+                                <p class="text-center text-white">Work with a team of global industry experts who
+                                    provide personalized management consultation to ensure utmost client satisfaction.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center mt-3">Partnered with Oracle Market Insights, our clients relay their trust in our
+                    methodology to provide
+                    leading market analysis and consultation through the year.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Main Section End -->
+
+    <section class="about-get" id="about-get">
+        <div class="container">
+            <h2 class="text-center mb-2">What you get</h2>
+            <div class="container">
+                <div class="row cols-5 mt-3">
+                    <div class="col text-center mt-2">
+                        <div class="member" style=" padding: 25px; border-radius: 10px;  border: 1px solid #e2e2e2;">
+                            <i class="fas fa-sitemap"
+                                style="color:red; font-size: 28px; display: flex; justify-content: center; margin-bottom: 20px;"></i>
+
+                            <div class="member-img">
+                            </div>
+
+                            <div class="member-info">
+                                <h4 class="text-center text-dark">Verified in-depth Data By Industry</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center mt-2">
+                        <div class="member"style=" padding: 25px; border-radius: 10px; border: 1px solid #e2e2e2;">
+                            <i class="fas fa-search"
+                                style="color:red; font-size: 28px; display: flex; justify-content: center; margin-bottom: 20px;"></i>
+
+                            <div class="member-img">
+                            </div>
+
+                            <div class="member-info">
+                                <h4 class="text-center text-dark">Verified in-depth Data By Industry</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center mt-2">
+                        <div class="member" style=" padding: 25px; border-radius: 10px; border: 1px solid #e2e2e2; ">
+                            <i class="fas fa-globe"
+                                style="color:red; font-size: 28px; display: flex; justify-content: center; margin-bottom: 20px;"></i>
+
+                            <div class="member-img">
+                            </div>
+
+                            <div class="member-info">
+                                <h4 class="text-center text-dark">Verified in-depth Data By Industry</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center mt-2">
+                        <div class="member" style=" padding: 25px; border-radius: 10px; border: 1px solid #e2e2e2; ">
+                            <i class="fas fa-user-injured"
+                                style="color:red; font-size: 28px; display: flex; justify-content: center; margin-bottom: 20px;"></i>
+
+                            <div class="member-img">
+                            </div>
+
+                            <div class="member-info">
+                                <h4 class="text-center text-dark mb-2">Verified in-depth Data By Industry</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center mt-2">
+                        <div class="member" style=" padding: 25px; border-radius: 10px; border: 1px solid #e2e2e2; ">
+                            <i class="fas fa-user-clock"
+                                style="color:red; font-size: 28px; display: flex; justify-content: center; margin-bottom: 20px;"></i>
+
+                            <div class="member-img">
+                            </div>
+
+                            <div class="member-info">
+                                <h4 class="text-center text-dark">Verified in-depth Data By Industry</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+
+        <div class="footer-newsletter">
+        </div>
+        <div class="footer-top bg-dark">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h3 class="text-white">SITEMAP</h3>
+                        <ul>
+                            <li> <a href="#" class="text-white">About us</a></li>
+                            <li> <a href="#" class="text-white">Services</a></li>
+                            <li> <a href="#" class="text-white">Blog</a></li>
+                            <li> <a href="#" class="text-white">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4 class="text-white">PRODUCT</h4>
+                        <ul>
+                            <li> <a href="#" class="text-white">Pricing</a></li>
+                            <li> <a href="#" class="text-white">Features</a></li>
+                            <li> <a href="#" class="text-white">Customers</a></li>
+                            <li> <a href="#" class="text-white">Feedback</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4 class="text-white">HELP</h4>
+                        <ul>
+                            <li> <a href="#" class="text-white">Getting Started</a></li>
+                            <li> <a href="#" class="text-white">Network Status</a></li>
+                            <li> <a href="#" class="text-white">FAQ</a></li>
+                            <li> <a href="#" class="text-white">Referal Program</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4 class="text-white">Subscribe</h4>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Send">
+                        </form>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-4">
+                <div class="copyright text-white">
+                    &copy; 2019. All Rights Reserved <span style="color: #EC0511;">Aiden Technology Sdn bhd</span>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </footer><!-- End Footer -->
+
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

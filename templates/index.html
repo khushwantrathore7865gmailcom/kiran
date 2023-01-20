@@ -1,0 +1,642 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Oracle Market insights</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="icon" href="https://uxwing.com/wp-content/themes/uxwing/download/hand-gestures/good-icon.png"
+    type="image/icon type">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css"
+    integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Vendor CSS Files -->
+  <link href="{% static '/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static '/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent bg-white">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html" class="text-dark"><span></span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html"><img src="{% static '/img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+
+                    <li class="dropdown "><a href="./Industrial.html" class="dropdown text-dark"><span>Industry
+                                Verticals</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            {% for c in cat %}
+                            <li><a href="/category/{{c.pk}}">{{c.name}}</a></li>
+                            {% endfor %}
+
+                        </ul>
+                    </li>
+                    <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
+
+                    </li>
+
+
+
+
+
+                    <li><a href="/contactus" class="nav-link scrollto text-dark" href="ContactUs.html">Contact</a></li>
+                    <li><a class="nav-link   text-dark" href="#hero"><i class="fa fa-shopping-bag"></i></a></li>
+
+                    <li><a class="nav-link  text-dark" href="#hero"><i class="fa fa-search"></i></a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1>Our Services</h1>
+            <h2>Being recognize as a competetive market player in your relevant industry happens by knowing the spaces,
+              apportunities and understanding the consumer behavior as the trend shifts</h2>
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto">Explore More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="{% static '/img/iconn.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <!-- <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g> -->
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="{% static '/img/icon2.png' %}" class="img-fluid animated" alt="" style="max-width: 90% !important;">
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <h1 class="About"> About Us</h1>
+            <p>Oracle Market Insite is a global merket intelligense research and consulting firm that specialize in a
+              providing in-depth reliable data that businesses across insudtry can relay on. Headquartered in india and
+              with our sales office is in Ohio,our specialize team of 100+ consultants experts analyst and freelancer
+              across the global market shifts and opportunities. These insights are offered as customized and syndicated
+              market research reports, along with personalized managment consulting to aour vast Clientlent across all
+              businens verticles. </p>
+            <button class="learn-more mt-4">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- Project Data  -->
+    <section id="project-data" class="project-data">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 project-data-sample">
+            <div class="elementor-icon">
+              <i class="fas fa-procedures"></i>
+              <p class="procedure-number">1,200 +</p>
+              <p class="project-title">Project Completed</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 project-data-sample">
+            <div class="elementor-icon">
+              <i class="fas fa-praying-hands"></i>
+              <p class="procedure-number">250 +</p>
+              <p class="project-title">Clientlent WorldWide</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 project-data-sample">
+            <div class="elementor-icon">
+              <i class="fas fa-recycle"></i>
+              <p class="procedure-number">450 +</p>
+              <p class="project-title">Consulting Project </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Project data -->
+
+    <!-- Why Choose section -->
+    <section id="chooseus" class="chooseus">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-left">
+            <h1 class="choose">Why Choose Us ?</h1>
+            <p>With most businesses and industries at the helm of rapid transformation and digitization, business owners
+              need to ensure that their business isn’t left out of the competitive sphere. We at Oracle Market Insights
+              work closely with our clients to understand their business objectives and offer tailored solutions based
+              on thorough market research and data insights.</p>
+            <p>Oracle Market Insights realizes these challenges and helps businesses address that and prepare ahead by
+              finding opportunities across various industries, that help potential investors and partners make informed
+              decisions.</p>
+            <button class="read-more mt-5 mb-2">Learn More</button>
+          </div>
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="{% static 'img/Oracle-poster.png' %}" class="img-fluid animated" alt=""
+              style="max-width: 90% !important;">
+          </div>
+
+        </div>
+
+      </div>
+
+      </div>
+    </section>
+    <!-- End Why Choose Us Section -->
+
+
+    <!-- Our Services Section -->
+    <section class="services" class="services">
+      <h3 class="our-sevices"> OUR SERVICES</h3>
+      <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="industry-tab" data-bs-toggle="tab" data-bs-target="#industry"
+              type="button" role="tab" aria-controls="industry" aria-selected="true"
+              style="padding: 50px; color: #EC0511;">
+              <i class="fas fa-industry" style="font-size: 30px;"></i>
+
+              <p class="mt-2">
+                Industry <br />
+                Analysis
+              </p>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Consulting-tab" data-bs-toggle="tab" data-bs-target="#Consulting" type="button"
+              role="tab" aria-controls="Consulting" aria-selected="false" style="padding: 50px;color: #EC0511;">
+              <i class="fab fa-servicestack" style="font-size: 30px;"></i>
+              <p class="mt-2">Consulting <br />
+                Services
+              </p>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="maketing-tab" data-bs-toggle="tab" data-bs-target="#maketing" type="button"
+              role="tab" aria-controls="maketing" aria-selected="false" style="padding: 50px; color: #EC0511;">
+              <i class="fas fa-marker" style="font-size: 30px; "></i>
+              <p class="mt-2">
+                Market <br />
+                Intelligence
+              </p>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="research-tab" data-bs-toggle="tab" data-bs-target="#research" type="button"
+              role="tab" aria-controls="research" aria-selected="false" style="padding: 50px;color: #EC0511;">
+              <i class="fab fa-squarespace" style="font-size: 30px;"></i>
+              <p class="mt-2">
+                Customized <br />
+                Research
+              </p>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="country-tab" data-bs-toggle="tab" data-bs-target="#country" type="button"
+              role="tab" aria-controls="country" aria-selected="false" style="padding: 50px; color: #EC0511;">
+              <i class="fas fa-democrat" style="font-size: 30px;"></i>
+              <p class="mt-2">
+                Country & Demographic<br />
+                Specific Analysis
+              </p>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="country-tab" data-bs-toggle="tab" data-bs-target="#country" type="button"
+              role="tab" aria-controls="country" aria-selected="false"
+              style="padding: 50px; color: #EC0511; border-bottom: none;">
+              <i class="fab fa-searchengin" style="font-size: 30px;"></i>
+              <p class="mt-2">
+                Long Term <br />
+                Engagement Model
+              </p>
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="industry" role="tabpanel" aria-labelledby="industry-tab">
+            <div>
+              <h4 class="mt-4">Industry Analysis Services</h4>
+              <p>
+                Being recognized as a competitive market player in your relevant industry happens by knowing the spaces,
+                opportunities and understanding the consumer behavior as the trend shifts. When those insights are
+                in-depth and tailored to identify growth opportunities, they provide invaluable information to our
+                clients.
+              </p>
+
+              <div class="row mt-3">
+                <div class="col-lg-9">
+                  At Oracle Market Insights, our team of 100+ analysts and consultants work together to provide
+                  solutions keeping in mind various government reforms, competitive environment, consumer behavior,
+                  growth hacking business models, and the latest technological developments.
+                  <button class="read-more-services mt-3">Read More</button>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="{% static 'img/service1.jpg' %}" alt="not found" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="Consulting" role="tabpanel" aria-labelledby="Consulting-tab">
+            <div class="container">
+              <div class="row mt-3">
+                <h4 class="mt-4">Consulting Services</h4>
+                <div class="col-lg-9 mt-3">
+                  With most businesses and industries at the helm of rapid transformation and digitization, business
+                  owners need to ensure that their business isn’t left out of the competitive sphere. We at Oracle
+                  Market Insights work closely with our clients to understand their business objectives and offer
+                  tailored solutions based on thorough market research and data insights.
+                  <button class="read-more-services mt-3">Read More</button>
+
+                </div>
+                <div class="col-lg-3" style="margin-top:-40px;">
+                  <img src="{% static '/img/services2.png' %}" alt="not found" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="maketing" role="tabpanel" aria-labelledby="maketing-tab">
+            <div class="container">
+              <div class="row mt-3">
+                <h4 class="mt-4">Market Intelligence Services</h4>
+                <div class="col-lg-9 mt-3">
+                  Staying ahead of the curve and growing the business in terms of ROI and digital transformation are the
+                  key goals for organizations in current times. Oracle Market Insights realizes these challenges and
+                  helps businesses address that and prepare ahead by finding opportunities across various industries,
+                  that help potential investors and partners make informed decisions.
+                  <button class="read-more-services mt-3">Read More</button>
+
+                </div>
+                <div class="col-lg-3" style="margin-top:-40px;">
+                  <img src="{% static '/img/services2.png' %}" alt="not found" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade " id="research" role="tabpanel" aria-labelledby="research-tab">
+            <div class="container">
+              <div class="row mt-3">
+                <h4 class="mt-4">Customized Research Services</h4>
+                <div class="col-lg-9 mt-3">
+                  Actionable insights are the bedrock of any organization’s business transformation and growth needs.
+                  For tailored decision making processes, Customized Research data helps organizations gain an insight
+                  into specific industries, in line with their specific area of interest and goals.
+                  <button class="read-more-services mt-3">Read More</button>
+
+                </div>
+                <div class="col-lg-3" style="margin-top:-40px;">
+                  <img src="{% static '/img/services4.jpg' %}" alt="not found" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="country" role="tabpanel" aria-labelledby="country-tab">
+            <div class="container">
+              <div class="row mt-3">
+                <h4 class="mt-4">Country & Demographic Specific Analysis Services</h4>
+                <div class="col-lg-9 mt-3">
+                  With a global team of analysts and consultants across most continents, Oracle Market Insights is
+                  always at the forefront of understanding and analyzing socio-cultural, political, economic, and
+                  nontechnical environment & scope in different countries, making us leaders in providing quality data
+                  in country-specific analysis.
+                  <button class="read-more-services mt-3">Read More</button>
+
+                </div>
+                <div class="col-lg-3" style="margin-top:-40px;">
+                  <img src="{% static '/img/service1.jpg' %}" alt="not found" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="longterm" role="tabpanel" aria-labelledby="longterm-tab">
+            <div class="container">
+              <div class="row mt-3">
+                <h4 class="mt-4">Long Term Engagement Model Services</h4>
+                <div class="col-lg-9 mt-3">
+                  Sustained anytime, anywhere, access to consumer demands and market shifts is an organizational
+                  imperative for businesses to stay ahead. Oracle Market Insights offers its clients a lucrative
+                  long-term engagement model wherein dedicated resources are assigned to a single client, and also
+                  trained and aligned on the client’s specific business goals and market understanding. This allows our
+                  clients to have a reliable single point of contact with a dedicated team of experts wholly committed
+                  to their needs.
+                  <button class="read-more-services mt-3">Read More</button>
+
+                </div>
+                <div class="col-lg-3" style="margin-top:-40px;">
+                  <img src="{% static '/img/services2.png' %}" alt="not found" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- End Our Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container position-relative">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static '/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                  quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static '/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                  quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static '/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
+                  tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static '/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
+                  minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static '/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
+                  labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+    <!-- News Section -->
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h3 class="text-center">Team</h3>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static '/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>13 Jan 2022</span>
+                <p>A business that focuses on bringing a change to modern golf and leisure clubs, LinksDAO, has
+                  announced...</p>
+                <button class="team-more mt-4">Read More</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static '/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>13 Jan 2022</span>
+                <p>One of the world’s leading robot and handheld vacuum cleaner brands, ILIFE, has announced the
+                  launch...</p>
+                <button class="team-more mt-4">Read More</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static '/img/team/team-4.jpg' %}" class="img-fluid" alt="">
+                <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>13 Jan 2022</span>
+                <p>On June 2, 2021, The omnichannel retailer of nutritional products, The Vitamin Shoppe, announced
+                  that...</p>
+                <button class="team-more mt-4">Read More</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="see-more mt-4">See More</button>
+      </div>
+    </section><!-- End Team Section -->
+    <!-- End News Section -->
+
+    <footer id="footer">
+
+      <div class="footer-newsletter">
+      </div>
+      <div class="footer-top bg-dark">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h3 class="text-white">SITEMAP</h3>
+              <ul>
+                <li> <a href="#" class="text-white">About us</a></li>
+                <li> <a href="#" class="text-white">Services</a></li>
+                <li> <a href="#" class="text-white">Blog</a></li>
+                <li> <a href="#" class="text-white">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4 class="text-white">PRODUCT</h4>
+              <ul>
+                <li> <a href="#" class="text-white">Pricing</a></li>
+                <li> <a href="#" class="text-white">Features</a></li>
+                <li> <a href="#" class="text-white">Customers</a></li>
+                <li> <a href="#" class="text-white">Feedback</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4 class="text-white">HELP</h4>
+              <ul>
+                <li> <a href="#" class="text-white">Getting Started</a></li>
+                <li> <a href="#" class="text-white">Network Status</a></li>
+                <li> <a href="#" class="text-white">FAQ</a></li>
+                <li> <a href="#" class="text-white">Referal Program</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4 class="text-white">Subscribe</h4>
+              <form action="" method="post">
+                <input type="email" name="email"><input type="submit" value="Send">
+              </form>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container py-4">
+          <div class="copyright text-white">
+            &copy; 2019. All Rights Reserved <span style="color: #EC0511;">Aiden Technology Sdn bhd</span>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </footer><!-- End Footer -->
+
+
+    <!-- Vendor JS Files -->
+    <script src="{% static '/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static '/vendor/aos/aos.js' %}"></script>
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static '/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static '/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+
+</html>
