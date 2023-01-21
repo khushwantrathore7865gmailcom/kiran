@@ -408,7 +408,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  background: url("../img/hero-bg.jpg");
+  /* background: url("../img/hero-bg.jpg"); */
   position: relative;
   padding: 120px 0 0 0;
 }
@@ -416,7 +416,7 @@ h6 {
 #hero:before {
   content: "";
   /* background: rgba(2, 5, 161, 0.91); */
-  background-image: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
+    background-image: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);   
   position: absolute;
   bottom: 0;
   top: 0;
@@ -429,7 +429,7 @@ h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 #hero h1 span {
