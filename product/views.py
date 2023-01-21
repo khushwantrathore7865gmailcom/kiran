@@ -1,6 +1,6 @@
 import datetime
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from .models import Categories, Product, OrderHistory, Inquiry, Customization, Requestforsample, Contact, \
     Talk_to_Analyst ,Paid_product
@@ -142,4 +142,5 @@ def paid(request, prod):
                                date=date,
                                company=company, country=country, designation=designation, prod=p)
         rfs.save()
+        return redirect('/')
     return render(request, 'Paid_product.html', {'p': p, 'cat': c})

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from product.views import home, prodList, prodDesc, inquiry, aboutus, contactus,requestforsample,customization
+from product.views import home, prodList, prodDesc, inquiry, aboutus, contactus, requestforsample, customization, paid
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,8 +25,9 @@ urlpatterns = [
                   path('category/<int:category>', prodList, name='prodList'),
                   path('product/<int:prod>', prodDesc, name='prodDesc'),
                   path('inquiry/<int:prod>', inquiry, name='inquiry'),
-                  path('sample/<int:prod>',requestforsample,name='sample'),
-                  path('custom/<int:prod>',customization,name='custom'),
+                  path('sample/<int:prod>', requestforsample, name='sample'),
+                  path('custom/<int:prod>', customization, name='custom'),
+                  path('paid/<int:prod>', paid, name='paid'),
                   path('aboutUs/', aboutus, name='aboutus'),
                   path('contactus/', contactus, name='contactus')
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
