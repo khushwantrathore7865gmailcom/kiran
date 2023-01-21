@@ -3,7 +3,7 @@ import datetime
 from django.shortcuts import render
 
 from .models import Categories, Product, OrderHistory, Inquiry, Customization, Requestforsample, Contact, \
-    Talk_to_Analyst
+    Talk_to_Analyst ,Paid_product
 
 
 # Create your views here.
@@ -124,3 +124,22 @@ def requestforsample(request, prod):
                                company=company, country=country, designation=designation, prod=p)
         rfs.save()
     return render(request, 'sample.html', {'p': p, 'cat': c})
+
+def paid(request, prod):
+    c = Categories.objects.all()
+    p = Product.objects.get(pk=prod)
+    if request.method == 'POST':
+        email = request.POST.get("email", "")
+        phone = request.POST.get("phone", "")
+        first_name = request.POST.get("first_name", "")
+        last_name = request.POST.get("last_name", "")
+        desc = request.POST.get("desc", "")
+        date = datetime.datetime.now()
+        company = request.POST.get("company")
+        country = request.POST.get("country")
+        designation = request.POST.get("designation")
+        rfs = Paid_product(email=email, phone=phone, first_name=first_name, last_name=last_name, desc=desc,
+                               date=date,
+                               company=company, country=country, designation=designation, prod=p)
+        rfs.save()
+    return render(request, 'Paid_product.html', {'p': p, 'cat': c})

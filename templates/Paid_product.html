@@ -11,6 +11,12 @@
     <meta content="" name="keywords">
     <link rel="icon" href="https://uxwing.com/wp-content/themes/uxwing/download/hand-gestures/good-icon.png"
         type="image/icon type">
+
+    <!-- Favicons -->
+    <!-- <link href="{% static 'img/favicon.png" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
@@ -31,12 +37,6 @@
     <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-    <!-- added -->
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Template Main CSS File -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
@@ -88,62 +88,20 @@
     </header><!-- End Header -->
 
 
-    <!-- Product Count Start -->
-    <section class="product-count mt-5">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact" style="background-color: rgb(247,247, 247);">
         <div class="container">
-            <div class="row" style="background: #ede9fb;">
-                <div class="col-lg-9" >
-                    <h1 class="industry-title">
-                        {{prod.name}}
-                    </h1>
-                    <p>{{prod.description}}
-                    </p>
-                </div>
-                <div class="col-lg-3 mt-2">
-                    <label class="text-center font-weight-bold h4">
 
-                    </label> <br>
-                    <div class="repactions">
-                        <ul class="industry-parent-list">
-                            <li class="industry-list"><a href="/inquiry/{{prod.pk}}" style="color:white;">Inquiry Before Buying</a></li>
-                            <li class="industry-list"><a href="/sample/{{prod.pk}}" style="color:white;">Request For Sample</a></li>
-                            <li class="industry-list"><a href="/custom/{{prod.pk}}" style="color:white;">Request For Customization</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                    </div>
-                </div>
+          <div><p><br></p><br></div>
+            <div class="section-title">
+                <h1 class="text-center">Get In Touch</h1>
+                <h1 class="text-center">Paid for product {{prod.name}}</h1>
             </div>
-        </div>
-    </section>
-    <!-- Product Count End -->
 
-    <!-- Main Section Start-->
-    <div class="container industry-content">
-        <div class="row">
-            <div class="col-lg-9">
-                <ul class="nav nav-pills"
-                    style="border-bottom: 2px solid gray;border-top: 2px solid gray; display: flex; justify-content: center; color: gray;">
-                    <li><a data-toggle="pill" href="#menu1" style="color: gray;">Additional Information</a></li>
-                    <li><a data-toggle="pill" href="#menu2" style="color: gray;">TOC</a></li>
-                    <li><a data-toggle="pill" href="#menu3" style="color: gray;">Talk To Analyst</a></li>
-                </ul>
-                <div class="tab-content">
+            <div class="row mt-5">
+                <div class="col-lg-8 mt-5 mt-lg-0">
 
-                    <div id="menu1" class="tab-pane fade in active">
-                        <h3>Additional Information</h3>
-                        {{prod.additional|safe}}
-
-                    </div>
-                    <div id="menu2" class="tab-pane fade">
-                        <h3>Table of Content</h3>
-
-                            {{prod.table_of_Content}}
-
-                    </div>
-                    <div id="menu3" class="tab-pane fade">
-                        <form method="post" style="background-color: rgb(247,247, 247);">
+                    <form method="post" style="background-color: rgb(247,247, 247);">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6 form-group">
@@ -202,123 +160,13 @@
                         <div><button type="submit" class="btn btn-danger">Submit</button></div>
 
                     </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="licence bg-dark" style="background-color: pink;">
-                    <form>
-                        <p class="lead text-center">Select License Type</p>
-                        <div class="buy-report-block">
-                            <ul class="list-unstyled">
-                                <li class="col-md-12"><span><input type="radio" name="license" checked="checked" id="SL"
-                                            value="{{prod.single_user}}"><label for="SL" class="text-white"> Single User</label></span> <span
-                                        class="float-right text-white">${{prod.single_user}}</span>
-                                </li>
-                                <li class="col-md-12"><span><input type="radio" name="license" checked="checked" id="ML"
-                                            value="{{prod.multi_user}}"><label for="ML" class="text-white"> MultiUser</label></span> <span
-                                        class="float-right text-white">${{prod.multi_user}}</span>
-                                </li>
-                                <li class="col-md-12"><span><input type="radio" name="license" checked="checked" id="CL"
-                                            value="{{prod.cooperate_user}}"><label for="CL" class="text-white"> Cooperate User</label></span> <span
-                                        class="float-right text-white">${{prod.cooperate_user}}</span>
-                                </li>
-                                <li class="col-md-12 text-center button-box">
-                                  <script src="https://www.paypal.com/sdk/js?client-id=ASpQizqrOqJ9h8R21gskfofHI4AO_oa3BgyDw9_odIzxXhH7rk63FFfa2KoAgl8IfrUZgUaWKFFZHfHV&currency=USD"></script>
-    <!-- Set up a container element for the button -->
-    <div id="paypal-button-container"></div>
-    <script>
-    var checked_license = document.querySelector('input[name = "license"]:checked');
-    alert(checked_license.value);
-     paypal.Buttons({
-  createOrder: function(data, actions) {
-    // This function sets up the details of the transaction, including the amount and line item details.
-    return actions.order.create({
-      purchase_units: [{
-        amount: {
-          value: checked_license.value
-        }
-      }]
-    });
-  },
-  onApprove: function(data, actions) {
-    // This function captures the funds from the transaction.
-    return actions.order.capture().then(function(details) {
-      // This function shows a transaction success message to your buyer.
-      alert('Transaction completed by ' + details.payer.name.given_name);
-    });
-  }
-}).render('#paypal-button-container');
-    </script>
-                                  </li>
-                            </ul>
-                        </div>
-                    </form>
+
                 </div>
 
             </div>
+
         </div>
-
-        <!-- Added -->
-
-    </div>
-    <!-- Main Section End -->
-
-    <!-- Related Posts start  -->
-    <section id="team" class="team section-bg">
-        <div class="container">
-            <div class="section-title">
-                <h3>Related Products</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                    <div class="member" style="height: 400px;">
-                        <div class="member-img">
-                            <img src="{% static 'img/team/team-4.jpg' %}" class="img-fluid industry-member-img" alt="Not Found">
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>William Anderson</h4>
-                            <span>13 Jan 2022</span>
-                            <p>One of the world’s leading robot and handheld vacuum cleaner brands, ILIFE, has announced
-                                the
-                                launch...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                    <div class="member" style="height: 400px;">
-                        <div class="member-img industry-member-img">
-                            <img src="{% static 'img/team/team-3.jpg' %}" class="img-fluid" alt="Not Found">
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>William Anderson</h4>
-                            <span>13 Jan 2022</span>
-                            <p>One of the world’s leading robot and handheld vacuum cleaner brands, ILIFE, has announced
-                                the
-                                launch...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                    <div class="member" style="height: 400px;">
-                        <div class="member-img">
-                            <img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid industry-member-img" alt="Not Found">
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>William Anderson</h4>
-                            <span>13 Jan 2022</span>
-                            <p>One of the world’s leading robot and handheld vacuum cleaner brands, ILIFE, has announced
-                                the
-                                launch...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ENd Related Posts -->
-
+    </section><!-- End Contact Section -->
 
 
     <footer id="footer">
@@ -355,16 +203,14 @@
                             <li> <a href="#" class="text-white">Getting Started</a></li>
                             <li> <a href="#" class="text-white">Network Status</a></li>
                             <li> <a href="#" class="text-white">FAQ</a></li>
-                            <li> <a href="#" class="text-white">Referral Program</a></li>
+                            <li> <a href="#" class="text-white">Referal Program</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4 class="text-white">Subscribe</h4>
                         <form action="" method="post">
-                            <input type="email" name="email" placeholder="Enter Email Address"
-                                class="footer-input"><input type="submit" value="Send"
-                                class="text-white border-0 btn-footer">
+                            <input type="email" name="email"><input type="submit" value="Send">
                         </form>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -383,6 +229,7 @@
 
         </div>
     </footer><!-- End Footer -->
+
 
     <!-- Vendor JS Files -->
     <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>

@@ -120,6 +120,20 @@ class Customization(models.Model):
     def __str__(self):
         return f"{self.first_name}_{self.email}"
 
+class Paid_product(models.Model):
+    email = models.EmailField()
+    first_name = models.CharField(max_length=250)
+    last_name = models.CharField(max_length=250)
+    phone = models.CharField(max_length=15)
+    desc = models.TextField()
+    date = models.DateTimeField()
+    company = models.CharField(max_length=250)
+    designation = models.CharField(max_length=250)
+    country = models.CharField(max_length=250)
+    prod = models.ForeignKey(Product, on_delete=models.CASCADE,default="")
+
+    def __str__(self):
+        return f"{self.first_name}_{self.email}"
 
 class OrderHistory(models.Model):
     customer = models.ForeignKey(Clients, on_delete=models.CASCADE)
