@@ -125,7 +125,6 @@ class Paid_product(models.Model):
     first_name = models.CharField(max_length=250)
     last_name = models.CharField(max_length=250)
     phone = models.CharField(max_length=15)
-    desc = models.TextField()
     date = models.DateTimeField()
     company = models.CharField(max_length=250)
     designation = models.CharField(max_length=250)

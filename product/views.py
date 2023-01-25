@@ -39,9 +39,9 @@ def contactus(request):
         inq.save()
         send_mail(
             subject="contacted",
-            message="contact you",
+            message=email+" wants to contact you"+"\n message::"+desc,
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=['khushwantrathore7865@gmail.com'])
+            recipient_list=['sales@oraclemarketinsights.com'])
 
     return render(request, 'ContactUs.html', {'cat': c})
 
@@ -75,6 +75,12 @@ def prodDesc(request, prod):
                               date=date,
                               company=company, country=country, designation=designation, prod=p)
         inq.save()
+        send_mail(
+            subject="Request to talk to analyst for product" + p.name,
+            message=email + " wants to contact you" + "\n message::" + desc,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=['sales@oraclemarketinsights.com'])
+        return redirect('/product/' + p.pk)
     return render(request, 'Industrial.html', {'prod': p, 'cat': c, 'plist': a})
 
 
@@ -94,6 +100,12 @@ def inquiry(request, prod):
         inq = Inquiry(email=email, phone=phone, first_name=first_name, last_name=last_name, desc=desc, date=date,
                       company=company, country=country, designation=designation, prod=p)
         inq.save()
+        send_mail(
+            subject="Inquiry for product"+ p.name,
+            message=email + " wants to contact you" + "\n message::" + desc,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=['sales@oraclemarketinsights.com'])
+        return redirect('/product/' + p.pk)
 
     return render(request, 'inquiry.html', {'p': p, 'cat': c})
 
@@ -115,6 +127,12 @@ def customization(request, prod):
                               date=date,
                               company=company, country=country, designation=designation, prod=p)
         custo.save()
+        send_mail(
+            subject="Customization request for product"+p.name,
+            message=email + " wants to contact you" + "\n message::" + desc,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=['sales@oraclemarketinsights.com'])
+        return redirect('/product/' + p.pk)
 
     return render(request, 'custom.html', {'prod': p, 'cat': c})
 
@@ -136,6 +154,13 @@ def requestforsample(request, prod):
                                date=date,
                                company=company, country=country, designation=designation, prod=p)
         rfs.save()
+        send_mail(
+            subject="Sample request for product"+p.name,
+            message=email + " wants to contact you" + "\n message::" + desc,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=['sales@oraclemarketinsights.com'])
+        return redirect('/product/'+p.pk)
+
     return render(request, 'sample.html', {'p': p, 'cat': c})
 
 
@@ -147,16 +172,22 @@ def paid(request, prod):
         phone = request.POST.get("phone", "")
         first_name = request.POST.get("first_name", "")
         last_name = request.POST.get("last_name", "")
-        desc = request.POST.get("desc", "")
+
         date = datetime.datetime.now()
         company = request.POST.get("company")
         country = request.POST.get("country")
         designation = request.POST.get("designation")
         lisc = request.POST.get("license")
 
-        rfs = Paid_product(email=email, phone=phone, first_name=first_name, last_name=last_name, desc=desc,
+        rfs = Paid_product(email=email, phone=phone, first_name=first_name, last_name=last_name,
                            date=date,
                            company=company, country=country, designation=designation, lic=lisc, prod=p)
         rfs.save()
+        send_mail(
+            subject='Payment done for product'+p.name+'by user'+first_name+' '+last_name,
+            message=email + " paid for the product"+p.name,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=['sales@oraclemarketinsights.com'])
+
         return redirect('/')
     return render(request, 'Paid_product.html', {'prod': p, 'cat': c})

@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'product'
+    'product',
+    # 'django-gsuite-email'
 ]
 
 MIDDLEWARE = [
@@ -119,14 +120,23 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+# EMAIL_BACKEND = 'django_gsuite_email.GSuiteEmailBackend'
+# GSUITE_CREDENTIALS_FILE="/path/to/credentials/file.json"
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
-EMAIL_HOST = "smtppro.zoho.in"
-EMAIL_PORT = 465
-EMAIL_USE_SSL = False
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+# EMAIL_HOST = "smtppro.zoho.in"
+# EMAIL_PORT = 995
+# EMAIL_USE_SSL = False
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = "sales@oraclemarketinsights.com"
+# DEFAULT_FROM_EMAIL = "sales@oraclemarketinsights.com"
+# # EMAIL_HOST_PASSWORD="SL@Top1Day"
+# EMAIL_HOST_PASSWORD = "SalesKiran@77"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'admin@oraclemarketinsights.com'
+EMAIL_HOST_PASSWORD = 'kwzbfyyngndooxcj'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "easshipp@easshipp.in"
-DEFAULT_FROM_EMAIL = "easshipp@easshipp.in"
-# EMAIL_HOST_PASSWORD="SL@Top1Day"
-EMAIL_HOST_PASSWORD = "Keepitup123@"
+EMAIL_USE_SSL = False
