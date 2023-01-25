@@ -12,6 +12,11 @@
   <link rel="icon" href="https://uxwing.com/wp-content/themes/uxwing/download/hand-gestures/good-icon.png"
     type="image/icon type">
 
+
+  <!-- Adeed -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -36,64 +41,50 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-  <style>
-   #particles-js {
-      position: absolute;
-      z-index: -1;
-      width: 100%;
-       background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
-      }
-      canvas{
-        height: 400px  !important;
-        padding: 120px 0px 0px 0px;
-      }
-      @media screen and (max-width: 992px) {
-        canvas {
-          height: 800px  !important;
-        padding: 120px 0px 0px 0px;
-        }
-      }
-      @media screen and (max-width: 600px) {
-        canvas {
-          height: 720px  !important;
-        }
-      }
-
-
-  </style>
 </head>
 
 <body>
-
-
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent bg-white">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <h1><a href="/" class="text-dark"><span></span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="/"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
+  
+    <section id="topbar " class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:contact@example.com">sales@coherentmarketinsights.com</a></i>
+          <div class="d-flex" style="flex-direction: column;">
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span>U.S.:+1 5589 55488 55</span></i>
+          </div>
+  
+        </div>
+  
+        <div class="social-links d-none d-md-flex">
+          <button type="button" class="btn btn-outline-secondary text-white ">Contact US</button>
+        </div>
       </div>
+    </section>
 
-      <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+    <header id="header" class="header sticky-top d-flex align-items-center header-transparent bg-white" >
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <div class="logo">
+          <h1><a href="/" class="text-dark"><span></span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <a href="index.html"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
+        </div>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+  
+            <li class="dropdown "><a href="#" class="dropdown text-dark"><span>Industry Verticals</span>
+                <i class="bi bi-chevron-down"></i></a>
+              <ul>
 
-                    <li class="dropdown "><a href="./Industrial.html" class="dropdown text-dark"><span>Industry
-                                Verticals</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            {% for c in cat %}
+                {% for c in cat %}
                             <li><a href="/category/{{c.pk}}">{{c.name}}</a></li>
                             {% endfor %}
-
-                        </ul>
-                    </li>
-                    <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
+              </ul>
+            </li>
+            <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
 
                     </li>
 
@@ -108,61 +99,103 @@
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
+  
+      </div>
+    </header>
+    <!-- End Header -->
 
-    </div>
-  </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"  style="width: 15px; height: 15px; border-radius: 50%;"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"  style="width: 15px; height: 15px; border-radius: 50%;"></button>
 
-  <section id="hero ">
-    <div id="particles-js"></div>
-      <div class="container">
-        <div class="row justify-content-between mt-5">
-          <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
-            <div data-aos="zoom-out">
-              <h1 class="text-white">Our Services</h1>
-              <h2 class="text-white">Being recognize as a competetive market player in your relevant industry happens by knowing the spaces,
-                apportunities and understanding the consumer behavior as the trend shifts</h2>
-              <div class="text-center text-lg-start d-inline p-2 text-white" style="background-color: #bf0045; ">
-                <a href="#about" class="btn-get-started scrollto text-white">Explore More</a>
+      </div>
+      <div class="carousel-inner">
+       
+        <div class="carousel-item active">
+          <section id="hero " style="background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);">
+            <!-- <div id="particles-js"></div> -->
+            <div class="container">
+              <div class="row justify-content-between mt-5">
+                <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+                  <div data-aos="zoom-out" style="padding: 20px;">
+                    <h1 class="text-white">About Us</h1>
+                    <h2 class="text-white">Oracle Market Insite is a global merket intelligense research and consulting firm that specialize in a
+                      providing in-depth reliable data that businesses across insudtry can relay on.</h2>
+                    <div class="text-center text-lg-start d-inline p-2 text-white" style="background-color: #bf0045; ">
+                      <a href="#about" class="btn-get-started scrollto text-white">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+                  <img src="{% static 'img/icon2.png' %}" class="img-fluid animated" alt="" style="max-width: 100% !important;">
+
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-            <img src="{% static 'img/iconn.png' %}" class="img-fluid animated" alt="">
-          </div>
+          </section> 
+        </div>
+        <div class="carousel-item ">
+          <section id="hero " style="background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e); ">
+            <!-- <div id="particles-js"></div> -->
+            <div class="container">
+              <div class="row justify-content-between mt-5">
+                <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+                  <div data-aos="zoom-out" style="padding: 20px;">
+                    <h1 class="text-white">Our Services</h1>
+                    <h2 class="text-white">Being recognize as a competetive market player in your relevant industry happens by
+                      knowing the spaces,
+                      apportunities and understanding the consumer behavior as the trend shifts</h2>
+                    <div class="text-center text-lg-start d-inline p-2 text-white" style="background-color: #bf0045; ">
+                      <a href="#about" class="btn-get-started scrollto text-white">Explore More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+                  <img src="{% static 'img/iconn.png' %}" class="img-fluid animated" alt="">
+                </div>
+              </div>
+            </div>
+          </section> 
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-
-  </section>
-  <!-- End Hero -->
-
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6" data-aos="fade-right">
-          <img src="{% static 'img/icon2.png' %}" class="img-fluid animated" alt="" style="max-width: 90% !important;">
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <h1 class="About"> About Us</h1>
-          <p>Oracle Market Insite is a global merket intelligense research and consulting firm that specialize in a
-            providing in-depth reliable data that businesses across insudtry can relay on. Headquartered in india and
-            with our sales office is in Ohio,our specialize team of 100+ consultants experts analyst and freelancer
-            across the global market shifts and opportunities. These insights are offered as customized and syndicated
-            market research reports, along with personalized managment consulting to aour vast Clientlent across all
-            businens verticles. </p>
-          <button class="learn-more mt-4 border-0">Learn More</button>
-        </div>
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6" data-aos="fade-right">
+        <img src="{% static 'img/icon2.png' %}" class="img-fluid animated" alt="" style="max-width: 90% !important;">
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <h1 class="About"> About Us</h1>
+        <p>Oracle Market Insite is a global merket intelligense research and consulting firm that specialize in a
+          providing in-depth reliable data that businesses across insudtry can relay on. Headquartered in india and
+          with our sales office is in Ohio,our specialize team of 100+ consultants experts analyst and freelancer
+          across the global market shifts and opportunities. These insights are offered as customized and syndicated
+          market research reports, along with personalized managment consulting to aour vast Clientlent across all
+          businens verticles. </p>
+        <button class="learn-more mt-4 border-0">Learn More</button>
       </div>
     </div>
+  </div>
 
-    </div>
-  </section><!-- End About Section -->
+  </div>
+</section>
+<!-- End About Section -->
 
   <!-- Project Data  -->
-  <section id="project-data" class="project-data">
+  <section id="project-data" class="project-data" style="margin-top: 60px;">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-4 project-data-sample">
@@ -192,7 +225,7 @@
   <!-- End Project data -->
 
   <!-- Why Choose section -->
-  <section id="chooseus" class="chooseus">
+  <section id="chooseus" class="chooseus" style="margin-top: 60px;">
     <div class="container">
       <div class="row">
         <div class="col-lg-6" data-aos="fade-left">
@@ -216,7 +249,7 @@
   <!-- End Why Choose Us Section -->
 
   <!-- Our Services Section -->
-  <section class="services" class="services">
+  <section class="services" class="services" style="margin-top: 60px;">
     <h3 class="our-sevices"> OUR SERVICES</h3>
     <div class="container-fluid">
       <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
@@ -407,7 +440,7 @@
   <!-- End Our Services Section -->
 
   <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="testimonials">
+  <section id="testimonials" class="testimonials" style="margin-top: 60px;">
     <div class="container position-relative">
       <h2 class="text-center">Testimonials</h2>
       <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -492,7 +525,7 @@
 
   <!-- News Section -->
   <!-- ======= Team Section ======= -->
-  <section id="team" class="team section-bg">
+  <section id="team" class="team section-bg" style="margin-top: 60px;">
     <div class="container">
 
       <div class="section-title">
@@ -549,6 +582,7 @@
     </div>
   </section>
   <!-- End News Section -->
+
 
   <footer id="footer">
     <div class="footer-newsletter">
@@ -618,21 +652,24 @@
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
   <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <!-- <script src="{% static 'vendor/php-email-form/validate.js' %}"></script> -->
+  <!-- <script src="{% static 'vendor/php-email-form/validate.js"></script> -->
 
   <!-- Template Main JS File -->
   <script src="{% static 'js/main.js' %}"></script>
-  <script>
-    particlesJS.load('hero', '{% static 'js/particlesjs-config' %}', function() {
-      console.log('callback - particles.js' %} config loaded');
+  <!-- <script>
+    particlesJS.load('hero', '{% static 'js/particlesjs-config', function () {
+      console.log('callback - particles.js config loaded');
     });
-  </script>
+  </script> -->
 
-  <script src="{% static 'js/particles.js' %}">
-  </script>
-  <script src="{% static 'js/app.js' %}">
-  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
 
 </body>
 
-</html>
+</html> -->

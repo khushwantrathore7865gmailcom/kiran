@@ -22,6 +22,66 @@ h6 {
   font-family: "Montserrat", sans-serif;
 }
 
+.contactus {
+  margin-left: 20px;
+}
+
+/* start */
+
+
+.topbar {
+  background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
+  /* height: 40px; */
+  font-size: 14px;
+  transition: all 0.5s;
+  color: #fff;
+  padding: 10px;
+}
+
+.topbar .contact-info i {
+  font-style: normal;
+  color: #fff;
+  line-height: 0;
+  margin-top: 5px;
+}
+
+.topbar .contact-info i a,
+.topbar .contact-info i span {
+  padding-left: 5px;
+  color: #fff;
+}
+
+@media (max-width: 575px) {
+
+  .topbar .contact-info i a,
+  .topbar .contact-info i span {
+    font-size: 13px;
+  }
+}
+
+.topbar .contact-info i a {
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.topbar .contact-info i a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.topbar .social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 0;
+  transition: 0.3s;
+  margin-left: 20px;
+}
+
+.topbar .social-links a:hover {
+  color: #fff;
+}
+
+/* end */
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -118,6 +178,8 @@ h6 {
   margin: 0;
   max-height: 40px;
 }
+
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -406,17 +468,17 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+.hero {
   width: 100%;
   /* background: url("../img/hero-bg.jpg"); */
   position: relative;
   padding: 120px 0 0 0;
 }
 
-#hero:before {
+.hero:before {
   content: "";
   /* background: rgba(2, 5, 161, 0.91); */
-    background-image: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);   
+  background-image: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -432,18 +494,18 @@ h6 {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-#hero h1 span {
+.hero h1 span {
   color: #fff;
   border-bottom: 4px solid #1acc8d;
 }
 
-#hero h2 {
+.hero h2 {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 40px;
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+.hero .btn-get-started {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -455,45 +517,45 @@ h6 {
   background: #c3111a;
 }
 
-#hero .btn-get-started:hover {
+.hero .btn-get-started:hover {
   background: #17b57d;
 }
 
-#hero .animated {
+.hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
 @media (min-width: 1024px) {
-  #hero {
+  .hero {
     background-attachment: fixed;
   }
 }
 
 @media (max-width: 991px) {
-  #hero {
+  .hero {
     padding-top: 80px;
   }
 
-  #hero .animated {
+  .hero .animated {
     -webkit-animation: none;
     animation: none;
   }
 
-  #hero .hero-img {
+  .hero .hero-img {
     text-align: center;
   }
 
-  #hero .hero-img img {
+  .hero .hero-img img {
     max-width: 50%;
   }
 
-  #hero h1 {
+  .hero h1 {
     font-size: 28px;
     line-height: 32px;
     margin-bottom: 10px;
   }
 
-  #hero h2 {
+  .hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -501,7 +563,7 @@ h6 {
 }
 
 @media (max-width: 575px) {
-  #hero .hero-img img {
+  .hero .hero-img img {
     width: 80%;
   }
 }
@@ -620,7 +682,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 0px 0;
   overflow: hidden;
 }
 
@@ -849,6 +911,7 @@ section {
 --------------------------------------------------------------*/
 .about {
   padding: 40px 0 0 0;
+  margin-top: 60px;
 }
 
 .read-more {
@@ -874,6 +937,19 @@ section {
   color: #ffffff;
   padding: 8px;
 }
+
+.explore-more {
+  text-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+  background-color: #EC0511;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  display: flex;
+  margin: auto;
+  color: #ffffff;
+  padding: 8px;
+}
+
+
 
 .About {
   color: #EC0511;
@@ -1674,12 +1750,14 @@ p.lead {
   .industry-content .col-lg-3 {
     padding: 0;
     /* background: #caddf9; */
-   /* background: linear-gradient(90deg, #ff5623 0%, #7881cc 100%) !important; */
-   background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);;
-   
+    /* background: linear-gradient(90deg, #ff5623 0%, #7881cc 100%) !important; */
+    background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
+    ;
+
     height: 25%;
   }
 }
+
 @media (max-width:400px) and (min-width:1200px) {
   .industry-content .col-lg-3 {
     padding: 0;

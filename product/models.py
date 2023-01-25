@@ -131,6 +131,7 @@ class Paid_product(models.Model):
     designation = models.CharField(max_length=250)
     country = models.CharField(max_length=250)
     prod = models.ForeignKey(Product, on_delete=models.CASCADE,default="")
+    lic = models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.first_name}_{self.email}"

@@ -46,29 +46,46 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent bg-white">
-        <div class="container d-flex align-items-center justify-content-between">
+    <section id="topbar " class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:contact@example.com">sales@coherentmarketinsights.com</a></i>
+          <div class="d-flex" style="flex-direction: column;">
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span>U.S.:+1 5589 55488 55</span></i>
+          </div>
 
-            <div class="logo">
-                <h1><a href="index.html" class="text-dark"><span></span></a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
-            </div>
+        </div>
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+        <div class="social-links d-none d-md-flex">
+          <button type="button" class="btn btn-outline-secondary text-white ">Contact US</button>
+        </div>
+      </div>
+    </section>
 
-                    <li class="dropdown "><a href="./Industrial.html" class="dropdown text-dark"><span>Industry
-                                Verticals</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            {% for c in cat %}
+    <header id="header" class="header sticky-top d-flex align-items-center header-transparent bg-white" >
+      <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+          <h1><a href="/" class="text-dark"><span></span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <a href="index.html"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+
+            <li class="dropdown "><a href="#" class="dropdown text-dark"><span>Industry Verticals</span>
+                <i class="bi bi-chevron-down"></i></a>
+              <ul>
+
+                {% for c in cat %}
                             <li><a href="/category/{{c.pk}}">{{c.name}}</a></li>
                             {% endfor %}
-
-                        </ul>
-                    </li>
-                    <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
+              </ul>
+            </li>
+            <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
 
                     </li>
 
@@ -84,7 +101,7 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-        </div>
+      </div>
     </header><!-- End Header -->
 
 
@@ -99,11 +116,14 @@
             </div>
 
             <div class="row mt-5">
-                <div class="col-lg-8 mt-5 mt-lg-0">
+                <div class="col-lg-12 mt-5 mt-lg-0">
 
-                    <form method="post" style="background-color: rgb(247,247, 247);">
+                    <form method="post" style="background-color: rgb(247,247, 247);" id="myForm">
                         {% csrf_token %}
                         <div class="row">
+                        <div class="col-lg-9">
+                        <div class="row">
+
                             <div class="col-md-6 form-group">
                                 <label for="first_name">First Name*</label>
                                 <input type="text" name="first_name" class="form-control" id="first_name"
@@ -140,24 +160,72 @@
                             <input type="text" class="form-control" name="country" id="country" placeholder="Country"
                                 required>
                         </div>
-                        <div class="form-group mt-3">
-                            <label for="desc">Precise Requirement *</label>
-                            <textarea class="form-control" name="desc" id="desc" rows="5"
-                                placeholder="Get 15% Free Customization. Kindly mention specific requirement in order to help you with customized research solution."
-                                required></textarea>
                         </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <div class="col-lg-3">
+                <div class="licence bg-dark" style="background-color: pink;">
+
+                        <p class="lead text-center">Select License Type</p>
+                        <div class="buy-report-block">
+                            <ul class="list-unstyled">
+                                <li class="col-md-12"><span><input type="radio" name="license" checked="checked" id="SL"
+                                            value="{{prod.single_user}}"><label for="SL" class="text-blue"> Single User</label></span> <span
+                                        class="float-right text-blue">${{prod.single_user}}</span>
+                                </li>
+                                <li class="col-md-12"><span><input type="radio" name="license" checked="checked" id="ML"
+                                            value="{{prod.multi_user}}"><label for="ML" class="text-blue"> MultiUser</label></span> <span
+                                        class="float-right text-blue">${{prod.multi_user}}</span>
+                                </li>
+                                <li class="col-md-12"><span><input type="radio" name="license" checked="checked" id="CL"
+                                            value="{{prod.cooperate_user}}"><label for="CL" class="text-blue"> Cooperate User</label></span> <span
+                                        class="float-right text-blue">${{prod.cooperate_user}}</span>
+                                </li>
+                                <li class="col-md-12 text-center button-box">
+                                  <script src="https://www.paypal.com/sdk/js?client-id=ASpQizqrOqJ9h8R21gskfofHI4AO_oa3BgyDw9_odIzxXhH7rk63FFfa2KoAgl8IfrUZgUaWKFFZHfHV&currency=USD"></script>
+    <!-- Set up a container element for the button -->
+    <div id="paypal-button-container"></div>
+    <script>
+    var checked_license = document.querySelector('input[name = "license"]:checked');
+
+     paypal.Buttons({
+  createOrder: function(data, actions) {
+    // This function sets up the details of the transaction, including the amount and line item details.
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          value: checked_license.value
+        }
+      }]
+    });
+  },
+  onApprove: function(data, actions) {
+    // This function captures the funds from the transaction.
+    return actions.order.capture().then(function(details) {
+      // This function shows a transaction success message to your buyer.
+    document.getElementById("myForm").submit();
+    });
+  }
+}).render('#paypal-button-container');
+    </script>
+                                  </li>
+                            </ul>
                         </div>
+
+                </div>
+
+            </div>
+                        </div>
+<!--                        <div class="my-3">-->
+<!--                            <div class="loading">Loading</div>-->
+<!--                            <div class="error-message"></div>-->
+<!--                            <div class="sent-message">Your message has been sent. Thank you!</div>-->
+<!--                        </div>-->
                         <!-- <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                                 I acknowledge that I have read the Privacy Policy
                             </label>
                           </div> -->
-                        <div><button type="submit" class="btn btn-danger">Submit</button></div>
+<!--                        <div><button type="submit" class="btn btn-danger">Submit</button></div>-->
 
                     </form>
 

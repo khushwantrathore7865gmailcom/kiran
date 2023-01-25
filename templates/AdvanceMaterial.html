@@ -37,33 +37,79 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
 </head>
+<style>
+        #mainheader {
+            background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
+            margin-top: 10px;
+            padding: 15px;
+        }
 
+        #particles-js {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
+        }
+
+        canvas {
+            height: 400px !important;
+            padding: 120px 0px 0px 0px;
+        }
+
+        @media screen and (max-width: 992px) {
+            canvas {
+                height: 800px !important;
+                padding: 120px 0px 0px 0px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            canvas {
+                height: 720px !important;
+            }
+        }
+    </style>
 <body>
+    <section id="topbar " class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:contact@example.com">sales@coherentmarketinsights.com</a></i>
+          <div class="d-flex" style="flex-direction: column;">
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span>U.S.:+1 5589 55488 55</span></i>
+          </div>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent bg-white">
-        <div class="container d-flex align-items-center justify-content-between">
+        </div>
 
-            <div class="logo">
-                <h1><a href="index.html" class="text-dark"><span></span></a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
-            </div>
+        <div class="social-links d-none d-md-flex">
+          <button type="button" class="btn btn-outline-secondary text-white ">Contact US</button>
+        </div>
+      </div>
+    </section>
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+    <header id="header" class="header sticky-top d-flex align-items-center header-transparent bg-white" >
+      <div class="container d-flex align-items-center justify-content-between">
 
-                    <li class="dropdown "><a href="./Industrial.html" class="dropdown text-dark"><span>Industry
-                                Verticals</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            {% for c in cat %}
+        <div class="logo">
+          <h1><a href="/" class="text-dark"><span></span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <a href="index.html"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active text-dark" href="/">Home</a></li>
+
+            <li class="dropdown "><a href="#" class="dropdown text-dark"><span>Industry Verticals</span>
+                <i class="bi bi-chevron-down"></i></a>
+              <ul>
+
+                {% for c in cat %}
                             <li><a href="/category/{{c.pk}}">{{c.name}}</a></li>
                             {% endfor %}
-
-                        </ul>
-                    </li>
-                    <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
+              </ul>
+            </li>
+            <li><a href="/aboutUs" class="nav-link scrollto text-dark">About Us</a>
 
                     </li>
 
@@ -79,9 +125,23 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-        </div>
+      </div>
     </header><!-- End Header -->
-
+<section id="mainheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <i class="fa fa-home text-white aria-hidden=" true" role="img" style="font-size: 30px; "></i>
+                    <span class="text-white">/ {{c.name}}</span>
+                </div>
+                <div class="col-lg-4">
+                    <h2 class="text-center text-white">{{c.name}}</h2>
+                </div>
+                <div class="col-lg-4">
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="Advance">
         <div class="container ">
 
