@@ -110,7 +110,7 @@
         <div class="logo">
           <h1><a href="/" class="text-dark"><span></span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="index.html"><img src="{% static 'img/oraclelogo.jpeg' %}" alt="" class="img-fluid"></a>
+          <a href="index.html"><img src="{% static '/img/oracle_logo.jpeg' %}" alt="" class="img-fluid"></a>
         </div>
 
         <nav id="navbar" class="navbar">
@@ -187,7 +187,7 @@
                                     <p>{{p.description}}</p>
                                     <div class="row">
                                         <div class="col-7 d-flex justify-content-between advance-view">
-                                            <p class="advance-dollar">from ${{p.single_user}}</p> <span class="vl advance-btns">
+                                            <p class="advance-dollar">from ${{p.data_pack}}</p> <span class="vl advance-btns">
                                             </span>
 
                                             <button class="advance-quick-view" onclick="window.location.href='/product/{{p.pk}}';">Quick View</button>

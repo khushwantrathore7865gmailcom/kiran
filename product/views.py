@@ -198,16 +198,24 @@ def savedata(request):
     print(dfs.columns)
     for i in dfs.index:
         d = dfs['Description'][i]
-        try:
+        # print(dfs['Category'][i].strip().strip(':'))
+        if dfs['Category'][i].strip().strip(':')=='Energy & Power':
             c = Categories.objects.get(name=dfs['Category'][i].strip().strip(':'))
-        except:
-            if dfs['Category'][i].strip().strip(':') == 'Semiconductor':
-                c = Categories.objects.get(name='Semiconductors')
-            if dfs['Category'][i].strip().strip(':') == 'Bulk Chemicals':
-                c = Categories.objects.get(name='Bulk Chemicals & Materials')
-
-        p = Product(name=dfs['Report Title'][i], description=d.splitlines()[0], category=c,
-                    table_of_Content=dfs['Table of Contents'][i], additional=d, single_user=dfs['SINGLE USER'][i],
-                    multi_user=dfs['MULTIPLE / CORPORATE'][i], cooperate_user=dfs['MULTIPLE / CORPORATE'][i],
-                    data_pack=dfs['DATA PACK'][i])
-        p.save()
+            p = Product(name=dfs['Report Title'][i], description=d.splitlines()[0], category=c,
+                        table_of_Content=dfs['Table of Contents'][i], additional=d, single_user=dfs['SINGLE USER'][i],
+                        multi_user=dfs['MULTIPLE / CORPORATE'][i], cooperate_user=dfs['MULTIPLE / CORPORATE'][i],
+                        data_pack=dfs['DATA PACK'][i])
+            p.save()
+        # try:
+        #     c = Categories.objects.get(name=dfs['Category'][i].strip().strip(':'))
+        # except:
+        #     if dfs['Category'][i].strip().strip(':') == 'Semiconductor':
+        #         c = Categories.objects.get(name='Semiconductors')
+        #     if dfs['Category'][i].strip().strip(':') == 'Bulk Chemicals':
+        #         c = Categories.objects.get(name='Bulk Chemicals & Materials')
+        #
+        # p = Product(name=dfs['Report Title'][i], description=d.splitlines()[0], category=c,
+        #             table_of_Content=dfs['Table of Contents'][i], additional=d, single_user=dfs['SINGLE USER'][i],
+        #             multi_user=dfs['MULTIPLE / CORPORATE'][i], cooperate_user=dfs['MULTIPLE / CORPORATE'][i],
+        #             data_pack=dfs['DATA PACK'][i])
+        # p.save()
