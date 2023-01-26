@@ -45,6 +45,19 @@ h6 {
   margin-top: 5px;
 }
 
+
+@media (max-width:575px) {
+  .top-uk {
+    display: none;
+  }
+}
+
+@media (max-width:575px) {
+  .top-us {
+    display: none;
+  }
+}
+
 .topbar .contact-info i a,
 .topbar .contact-info i span {
   padding-left: 5px;
@@ -254,7 +267,7 @@ h6 {
 .navbar .dropdown ul {
   display: block;
   position: absolute;
-  left: 30px;
+  left: -350px;
   top: calc(100% + 30px);
   margin: 0;
   padding: 10px 0;
@@ -691,7 +704,8 @@ section {
 }
 
 .section-title {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+  margin-top: 40px;
 }
 
 .section-title h2 {
@@ -1751,7 +1765,8 @@ p.lead {
     padding: 0;
     /* background: #caddf9; */
     /* background: linear-gradient(90deg, #ff5623 0%, #7881cc 100%) !important; */
-    background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e);
+   
+    /* background: linear-gradient(to right bottom, #cd1f07, #bf0045, #96016a, #5a2a79, #09326e); */
     ;
 
     height: 25%;
