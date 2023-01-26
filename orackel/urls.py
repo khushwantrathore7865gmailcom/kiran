@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from product.views import home, prodList, prodDesc, inquiry, aboutus, contactus, requestforsample, customization, paid
+from product.views import home, prodList, prodDesc, inquiry, aboutus, contactus, requestforsample, customization, paid, \
+    savedata
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,5 +30,6 @@ urlpatterns = [
                   path('custom/<int:prod>', customization, name='custom'),
                   path('pay/<int:prod>', paid, name='paid'),
                   path('aboutUs/', aboutus, name='aboutus'),
-                  path('contactus/', contactus, name='contactus')
+                  path('contactus/', contactus, name='contactus'),
+                  path('saveDataExlsx', savedata)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

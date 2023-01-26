@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-de7=h^@_s(f9tu-x!+!ky4xqv4v0&iydbtx7+!hqyj)gbq-ztm
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1:8000', 'https://oraclemarketinsights.com/', 'http://oraclemarketinsights.com/']
+ALLOWED_HOSTS = ['127.0.0.1:8000','127.0.0.1', 'https://oraclemarketinsights.com/', 'http://oraclemarketinsights.com/']
 
 # Application definition
 

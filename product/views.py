@@ -1,5 +1,5 @@
 import datetime
-
+import pandas as pd
 from django.shortcuts import render, redirect
 
 from .models import Categories, Product, OrderHistory, Inquiry, Customization, Requestforsample, Contact, \
@@ -39,7 +39,7 @@ def contactus(request):
         inq.save()
         send_mail(
             subject="contacted",
-            message=email+" wants to contact you"+"\n message::"+desc,
+            message=email + " wants to contact you" + "\n message::" + desc,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=['sales@oraclemarketinsights.com'])
 
@@ -101,7 +101,7 @@ def inquiry(request, prod):
                       company=company, country=country, designation=designation, prod=p)
         inq.save()
         send_mail(
-            subject="Inquiry for product"+ p.name,
+            subject="Inquiry for product" + p.name,
             message=email + " wants to contact you" + "\n message::" + desc,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=['sales@oraclemarketinsights.com'])
@@ -128,7 +128,7 @@ def customization(request, prod):
                               company=company, country=country, designation=designation, prod=p)
         custo.save()
         send_mail(
-            subject="Customization request for product"+p.name,
+            subject="Customization request for product" + p.name,
             message=email + " wants to contact you" + "\n message::" + desc,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=['sales@oraclemarketinsights.com'])
@@ -155,11 +155,11 @@ def requestforsample(request, prod):
                                company=company, country=country, designation=designation, prod=p)
         rfs.save()
         send_mail(
-            subject="Sample request for product"+p.name,
+            subject="Sample request for product" + p.name,
             message=email + " wants to contact you" + "\n message::" + desc,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=['sales@oraclemarketinsights.com'])
-        return redirect('/product/'+p.pk)
+        return redirect('/product/' + p.pk)
 
     return render(request, 'sample.html', {'p': p, 'cat': c})
 
@@ -184,10 +184,30 @@ def paid(request, prod):
                            company=company, country=country, designation=designation, lic=lisc, prod=p)
         rfs.save()
         send_mail(
-            subject='Payment done for product'+p.name+'by user'+first_name+' '+last_name,
-            message=email + " paid for the product"+p.name,
+            subject='Payment done for product' + p.name + 'by user' + first_name + ' ' + last_name,
+            message=email + " paid for the product" + p.name,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=['sales@oraclemarketinsights.com'])
 
         return redirect('/')
     return render(request, 'Paid_product.html', {'prod': p, 'cat': c})
+
+
+def savedata(request):
+    dfs = pd.read_excel('E:\kiran\orackel\static\data.xlsx')
+    print(dfs.columns)
+    for i in dfs.index:
+        d = dfs['Description'][i]
+        try:
+            c = Categories.objects.get(name=dfs['Category'][i].strip().strip(':'))
+        except:
+            if dfs['Category'][i].strip().strip(':') == 'Semiconductor':
+                c = Categories.objects.get(name='Semiconductors')
+            if dfs['Category'][i].strip().strip(':') == 'Bulk Chemicals':
+                c = Categories.objects.get(name='Bulk Chemicals & Materials')
+
+        p = Product(name=dfs['Report Title'][i], description=d.splitlines()[0], category=c,
+                    table_of_Content=dfs['Table of Contents'][i], additional=d, single_user=dfs['SINGLE USER'][i],
+                    multi_user=dfs['MULTIPLE / CORPORATE'][i], cooperate_user=dfs['MULTIPLE / CORPORATE'][i],
+                    data_pack=dfs['DATA PACK'][i])
+        p.save()
